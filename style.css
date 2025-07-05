@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ffff00;
+}
+
+h1 {
+    color: #ffff00;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.score, .lives {
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ffff00;
+}
+
+#gameCanvas {
+    border: 3px solid #0000ff;
+    background-color: #000;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.game-controls {
+    margin-top: 20px;
+}
+
+.control-info {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.control-info p {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+button {
+    background-color: #ffff00;
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #666;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.game-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffff00;
+    padding: 30px 50px;
+    border-radius: 10px;
+    border: 3px solid #ffff00;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1000;
+}
+
+.game-message.hidden {
+    display: none;
+}
+
+.game-message.win {
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+.game-message.lose {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+/* Responsive design */
+@media (max-width: 800px) {
+    .game-container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    #gameCanvas {
+        width: 100%;
+        max-width: 760px;
+        height: auto;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    button {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
